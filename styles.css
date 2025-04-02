@@ -289,6 +289,7 @@ h2 i {
     flex: 1;
     min-width: 350px;
     text-align: center;
+    position: relative; /* For potential overlay effects */
 }
 
 .profile-image img {
@@ -296,11 +297,13 @@ h2 i {
     border-radius: 10px;
     border: 2px solid #80d8d2;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.3s ease-in-out;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border-color 0.4s ease-in-out;
 }
 
 .profile-image img:hover {
-    box-shadow: 0 6px 20px rgba(128, 216, 210, 0.4);
+    transform: scale(1.05) rotate(2deg); /* Slight scale and tilt for a cool effect */
+    box-shadow: 0 10px 30px rgba(128, 216, 210, 0.6); /* Bolder teal glow */
+    border-color: #ff6f91; /* Pink border on hover for a pop of color */
 }
 
 .about-me-text {
@@ -585,6 +588,12 @@ footer {
 
     .profile-image img {
         width: 280px;
+    }
+
+    .profile-image img:hover {
+        transform: scale(1.05) rotate(2deg); /* Consistent hover effect on mobile */
+        box-shadow: 0 10px 30px rgba(128, 216, 210, 0.6);
+        border-color: #ff6f91;
     }
 
     .about-me-text p {
